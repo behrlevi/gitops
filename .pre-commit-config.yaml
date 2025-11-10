@@ -1,0 +1,17 @@
+# .pre-commit-config.yaml
+repos:
+  # --- Standard pre-commit hooks ---
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.6.0
+    hooks:
+      - id: trailing-whitespace
+      - id: end-of-file-fixer
+      - id: check-yaml
+
+  # --- Commitizen Hook ---
+  - repo: https://github.com/commitizen-tools/commitizen
+    rev: v3.27.0 # Use the latest version
+    hooks:
+      # This hook checks your commit message *before* you commit
+      - id: commitizen
+        stages: [commit-msg]
