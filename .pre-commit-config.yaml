@@ -15,3 +15,12 @@ repos:
       # This hook checks your commit message *before* you commit
       - id: commitizen
         stages: [commit-msg]
+
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    # Ruff version.
+    rev: v0.11.6
+    hooks:
+      # Run the linter.
+      - id: ruff
+      # Run the formatter.
+      - id: ruff-format
