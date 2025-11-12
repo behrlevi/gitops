@@ -385,8 +385,6 @@ source = { editable = "." }
 dependencies = [
     { name = "fastapi" },
     { name = "httpx" },
-    { name = "ruff" },
-    { name = "starlette" },
     { name = "uvicorn" },
 ]
 
@@ -402,8 +400,6 @@ dev = [
 requires-dist = [
     { name = "fastapi", specifier = ">=0.115.12" },
     { name = "httpx", specifier = ">=0.28.1" },
-    { name = "ruff", specifier = ">=0.14.4" },
-    { name = "starlette", specifier = ">=0.49.1" },
     { name = "uvicorn", specifier = ">=0.34.2" },
 ]
 

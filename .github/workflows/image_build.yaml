@@ -1,0 +1,13 @@
+name: Image build
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Cloning the repository
+        uses: actions/checkout@v4
+
+      - name: Build the Image
+        run: |
+          docker build -t backend:testing .
+          trivy image --format table --severity CRITICAL,HIGH backend:testing
