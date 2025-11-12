@@ -13,4 +13,5 @@ jobs:
       - name: Build the Image
         run: |
           docker build -t backend:testing .
+          cd src/backend
           trivy image --format table --severity CRITICAL,HIGH backend:testing
