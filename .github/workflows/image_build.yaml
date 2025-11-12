@@ -17,6 +17,7 @@ jobs:
 
       - name: Run vulnerability scan with Trivy
         uses: aquasecurity/trivy-action@0.28.0
-        with: 'backend:testing'
-        format: 'table'
-        severity: 'HIGH,CRITICAL'
+        with:
+          image-ref: 'backend:testing'
+          format: 'table'
+          severity: 'HIGH,CRITICAL'
