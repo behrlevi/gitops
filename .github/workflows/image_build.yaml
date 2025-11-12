@@ -1,5 +1,8 @@
 name: Image build
 
+on:
+  always:
+
 jobs:
   build:
     runs-on: ubuntu-latest
