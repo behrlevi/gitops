@@ -19,7 +19,7 @@ jobs:
               - 'src/Frontend/**'
               - '.github/workflows/backend-tests.yaml'
   test:
-    name: Test Backend
+    name: Test Frontend
     needs: check_paths
     if: ${{ needs.check_paths.outputs.should_run == 'true' }}
     runs-on: ubuntu-latest
@@ -51,20 +51,20 @@ jobs:
           # '--cov' is targeting the whole directory, --cov-report creates the xml report,
           # --cov-fail won't let the test pass under 80% coverage
           # Coverage means the amout of code the test covers
-          uv run pytest tests/ -v --cov=src/backend --cov-report=xml --cov-fail-under=80
+          uv run pytest tests/ -v --cov=src/frontend --cov-report=xml --cov-fail-under=80
 
       - name: Upload coverage report
         uses: actions/upload-artifact@v4
         with:
           name: coverage-report
-          path: ./src/backend/coverage.xml
+          path: ./src/frontend/coverage.xml
           retention-days: 7
         if: ${{ always() }}
 
       - name: Coverage Report
         uses: irongut/CodeCoverageSummary@v1.3.0
         with:
-          filename: ./src/backend/coverage.xml
+          filename: ./src/frontend/coverage.xml
           badge: true
           format: markdown
           output: both
