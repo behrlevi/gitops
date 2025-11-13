@@ -1,4 +1,4 @@
-name: Frontend teting
+name: Frontend Tests
 
 on:
   pull_request:
