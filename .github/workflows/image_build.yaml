@@ -1,0 +1,23 @@
+name: Image testing
+
+on:
+  push:
+
+jobs:
+  testing:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Cloning the repository
+        uses: actions/checkout@v4
+
+      - name: Build the Image
+        run: |
+          cd src/backend
+          docker build -t backend:testing .
+
+      - name: Run vulnerability scan with Trivy
+        uses: aquasecurity/trivy-action@0.28.0
+        with:
+          image-ref: 'backend:testing'
+          format: 'table'
+          severity: 'HIGH,CRITICAL'
