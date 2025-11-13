@@ -15,9 +15,9 @@ jobs:
         id: filter
         with:
           filters: |
-            backend:
+            frontend:
               - 'src/Frontend/**'
-              - '.github/workflows/frontend-tests.yaml'
+              - '.github/workflows/frontend-test.yaml'
   test:
     name: Test Frontend
     needs: check_paths
