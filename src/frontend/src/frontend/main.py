@@ -1,4 +1,4 @@
-fom flask import Flask, render_template, request, redirect, url_for, jsonify
+om flask import Flask, render_template, request, redirect, url_for, jsonify
 import requests
 import logging
 from datetime import datetime
